@@ -15,12 +15,12 @@ function App() {
       <img src={logo} className="App-logo" alt="logo" />
       <Routes>
       <Route path="/example" element={ isLoggedin ? <Example/> : <Navigate to="/login" replace /> } />
+      <Route path="*" element={<h1>error 404</h1>} />
       <Route path="/" element={ isLoggedin ? <Home/> : <Navigate to="/login" replace /> } />
      
         <Route path="/login" element={<Login/>} />
 
         <Route path="/category/:id" element={ isLoggedin ? <Category/> : <Navigate to="/login" replace /> } />
-        <Route path="*" element={<h1>error 404</h1>} />
       </Routes>
     </div>
   );
